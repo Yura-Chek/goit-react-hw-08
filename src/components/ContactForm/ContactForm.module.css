@@ -1,0 +1,46 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid #d4d4d4;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  max-width: 356px;
+  margin-left: 40px;
+}
+
+.name,
+.tel {
+  color: black;
+  padding: 0.6rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  outline: none;
+  background-color: transparent;
+}
+
+.name:hover,
+.tel:hover {
+  border: 1px solid #5c99f5;
+}
+
+.btn {
+  background-color: #446cef;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #3558c7;
+  transition: all 200ms ease-in-out;
+}
