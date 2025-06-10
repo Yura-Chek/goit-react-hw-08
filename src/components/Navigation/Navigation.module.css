@@ -1,0 +1,21 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+}
+
+.link {
+  text-decoration: none;
+  color: #004d40;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.link:hover,
+.link.active {
+  background-color: #a7ffeb;
+  color: #004d40;
+}
