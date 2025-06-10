@@ -1,12 +1,13 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loginThunk } from "../../redux/auth/operations";
+import css from "./LoginForm.module.css";
 
 function LoginForm() {
   const dispatch = useDispatch();
+
   const validationSchema = Yup.object({
     email: Yup.string().email("Invalid email").required("Email required"),
     password: Yup.string()
@@ -24,34 +25,48 @@ function LoginForm() {
   };
 
   return (
-    <div>
-      <div>
-        <div>
-          <h1>Login</h1>
-        </div>
-        <div>
-          <div>
-            <Formik
-              initialValues={initialValues}
-              validationSchema={validationSchema}
-              onSubmit={handleSubmit}
-            >
-              <Form>
-                <label>Email</label>
-                <Field type="email" name="email" placeholder="Email" />
-                <ErrorMessage name="email" component="span" />
-                <label>Password</label>
-                <Field name="password" type="password" placeholder="Password" />
-                <ErrorMessage component="span" name="password" />
-                <button type="submit">Login</button>
+    <div className={css.container}>
+      <h1 className={css.title}>Login</h1>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={handleSubmit}
+      >
+        <Form className={css.form}>
+          <label className={css.label}>Email</label>
+          <Field
+            className={css.input}
+            type="email"
+            name="email"
+            placeholder="Email"
+          />
+          <ErrorMessage name="email" component="span" className={css.error} />
 
-                <Link to="/register">You don't have an account? Sign up!</Link>
-                <Link to="/">Back to Homepage</Link>
-              </Form>
-            </Formik>
-          </div>
-        </div>
-      </div>
+          <label className={css.label}>Password</label>
+          <Field
+            className={css.input}
+            type="password"
+            name="password"
+            placeholder="Password"
+          />
+          <ErrorMessage
+            name="password"
+            component="span"
+            className={css.error}
+          />
+
+          <button className={css.button} type="submit">
+            Login
+          </button>
+
+          <Link to="/register" className={css.link}>
+            Don't have an account? Sign up
+          </Link>
+          <Link to="/" className={css.link}>
+            Back to Homepage
+          </Link>
+        </Form>
+      </Formik>
     </div>
   );
 }
