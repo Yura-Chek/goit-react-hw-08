@@ -1,0 +1,43 @@
+.formContainer {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+  margin-bottom: 24px;
+  max-width: 400px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+span {
+  color: red;
+  font-size: 12px;
+  display: block;
+  margin-top: -8px;
+  margin-bottom: 8px;
+}
+
+button {
+  background-color: #1976d2;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
